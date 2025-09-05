@@ -1,0 +1,35 @@
+<section>
+    <h1 class="display-4 fw-bold mb-3">Olá, bem-vindo!</h1>
+    <p class="lead text-muted mb-4">
+        Lorem ipsum bibendum condimentum, nisi. Lorem ipsum bibendum condimentum, nisi.
+    </p>
+    <hr class="my-4 mx-auto">
+    <p class="fs-5 mb-4">
+        Lorem ipsum bibendum condimentum, nisi. Lorem ipsum bibendum condimentum, nisi.
+    </p>
+    <a class="btn btn-primary btn-lg px-4" href="#" role="button">Crie uma conta</a>
+</section>
+
+<hr>
+
+<section>
+    <h2 class="mb-4 fw-bold mb-4">Postagens recentes</h2>
+
+    {{#each postagens}}
+    <div class="card mb-4 shadow-sm">
+        <div class="card-body">
+            <h4 class="card-title fw-bold">{{titulo}}</h4>
+            <p class="card-text text-secondary">{{descricao}}</p>
+            <a href="/postagem/{{slug}}" class="btn btn-sm btn-secondary">Saiba mais...</a>
+        </div>
+        <div class="card-footer bg-white small text-muted d-flex gap-2">
+            <span><i class="bi bi-folder-fill me-1"></i><strong>{{categoria.nome}}</strong></span>
+            <span><i class="bi bi-calendar-event me-1"></i>{{formatDate date "DD/MM/YYYY"}}</span>
+        </div>
+    </div>
+    {{else}}
+    <div class="alert alert-info" role="alert">
+        Nenhuma postagem encontrada!
+    </div>
+    {{/each}}
+</section>
